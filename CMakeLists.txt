@@ -1,0 +1,104 @@
+cmake_minimum_required(VERSION 3.10)
+project(UTK_source)
+
+set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wl,--no-as-needed -ldl -O3")
+
+include_directories(./)
+include_directories(src/headers)
+include_directories(${CMAKE_SOURCE_DIR}/lp_lib/bfp)
+include_directories(${CMAKE_SOURCE_DIR}/lp_lib/bfp/bfp_LUSOL)
+include_directories(${CMAKE_SOURCE_DIR}/lp_lib/bfp/bfp_LUSOL/LUSOL)
+include_directories(${CMAKE_SOURCE_DIR}/lp_lib/colamd)
+include_directories(${CMAKE_SOURCE_DIR}/lp_lib/lp_solve)
+include_directories(${CMAKE_SOURCE_DIR}/lp_lib/lpsolve55)
+include_directories(${CMAKE_SOURCE_DIR}/lp_lib/shared)
+include_directories(${CMAKE_SOURCE_DIR}/lp_lib)
+add_executable(UTK_source
+        src/headers/cellTree.h
+        src/headers/collection.h
+        src/headers/filemem.h
+        src/headers/global.h
+        src/headers/header.h
+        src/headers/hypercube.h
+        src/headers/mem.h
+        src/headers/param.h
+        src/headers/point.h
+        src/headers/queryGen.h
+        src/headers/rentry.h
+        src/headers/rnode.h
+        src/headers/rtree.h
+        src/headers/skyline.h
+        src/headers/tgs.h
+        src/headers/utk.h
+        src/headers/virtualRNode.h
+        src/cellTree.cpp
+        src/collection.cpp
+        src/download_lp_solve.sh
+        src/filemem.cpp
+        src/global.cpp
+        src/hypercube.cpp
+        src/main.cpp
+        src/makefile
+        src/param.cpp
+        src/point.cpp
+        src/queryGen.cpp
+        src/rentry.cpp
+        src/rnode.cpp
+        src/rtree.cpp
+        src/skyline.cpp
+        src/tgs.cpp
+        src/utk.cpp
+        src/virtualRNode.cpp
+        install.sh
+        lp_lib/bfp/bfp_LUSOL/lp_LUSOL.h
+        lp_lib/bfp/bfp_LUSOL/LUSOL/lusol.h
+        lp_lib/bfp/lp_BFP.h
+        lp_lib/colamd/colamd.h
+        lp_lib/ini.h
+        lp_lib/shared/commonlib.h
+        lp_lib/shared/mmio.h
+        lp_lib/shared/myblas.h
+        lp_lib/lp_crash.h
+        lp_lib/lp_Hash.h
+        lp_lib/lp_lib.h
+        lp_lib/lp_matrix.h
+        lp_lib/lp_MDO.h
+        lp_lib/lp_mipbb.h
+        lp_lib/lp_MPS.h
+        lp_lib/lp_presolve.h
+        lp_lib/lp_price.h
+        lp_lib/lp_pricePSE.h
+        lp_lib/lp_report.h
+        lp_lib/lp_scale.h
+        lp_lib/lp_simplex.h
+        lp_lib/lp_SOS.h
+        lp_lib/lp_utils.h
+        lp_lib/lp_wlp.h
+        lp_lib/bfp/bfp_LUSOL/lp_LUSOL.c
+        lp_lib/bfp/bfp_LUSOL/LUSOL/lusol.c
+        lp_lib/colamd/colamd.c
+        lp_lib/ini.c
+        lp_lib/shared/commonlib.c
+        lp_lib/shared/mmio.c
+        lp_lib/shared/myblas.c
+        lp_lib/lp_crash.c
+        lp_lib/lp_Hash.c
+        lp_lib/lp_lib.c
+        lp_lib/lp_matrix.c
+        lp_lib/lp_MDO.c
+        lp_lib/lp_mipbb.c
+        lp_lib/lp_MPS.c
+        lp_lib/lp_params.c
+        lp_lib/lp_presolve.c
+        lp_lib/lp_price.c
+        lp_lib/lp_pricePSE.c
+        lp_lib/lp_report.c
+        lp_lib/lp_scale.c
+        lp_lib/lp_simplex.c
+        lp_lib/lp_SOS.c
+        lp_lib/lp_utils.c
+        lp_lib/lp_wlp.c
+        utk_math_lib.h
+        utk_math_lib_impl.h
+        utk_vector.h)

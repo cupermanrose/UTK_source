@@ -1,0 +1,1 @@
+-d 4 -k 10 -f /home/kemingli/klevel/data/anti/ANTI400K4.dat -q /home/kemingli/klevel/query/utk/utk_query_4d_l0.05.txt -i ./idx/idx3.txt -m JAA -R 0.01
